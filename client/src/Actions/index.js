@@ -1,7 +1,5 @@
 import axios from 'axios'
 
-const url = 'http://localhost:3001'
-
 export const GET_COUNTRIES = 'GET_COUNTRIES';
 export const GET_COUNTRIES_BY_ID = 'GET_COUNTRIES_BY_ID';
 export const GET_COUNTRIES_BY_NAME = 'GET_COUNTRIES_BY_NAME';
@@ -9,7 +7,7 @@ export const GET_MORE_THA_ONE_COUNTRIES_BY_ID = 'GET_MORE_THA_ONE_COUNTRIES_BY_I
 
 export function getCountries () {
     return async function (dispatch) {
-        const req= await axios.get(`${url}/countries`);
+        const req= await axios.get(`/countries`);
         const countriesData = req.data.map((country) => {
             return {
                 id: country.id,
@@ -26,7 +24,7 @@ export function getCountries () {
 
 export function getCountriesById (id) {
     return async function (dispatch) {
-        const req= await axios.get(`${url}/countries/${id}`);
+        const req= await axios.get(`/countries/${id}`);
             const foundedCountry = {
             id: req.data.id,
             name:req.data.name,
@@ -44,7 +42,7 @@ export function getCountriesById (id) {
 
 export function getCountriesByName (name) {
     return async function (dispatch) {
-        const req= await axios.get(`${url}/countries?name=${name}`);
+        const req= await axios.get(`countries?name=${name}`);
         const countriesData = req.data.map((country) => {
             return {
                 name: country.name,
@@ -64,6 +62,6 @@ export function getCountriesByName (name) {
 
 export function postActivity (activity) {
     return async function () {
-         await axios.post(`${url}/activity`, activity );
+         await axios.post(`/activity`, activity );
     };  
 }

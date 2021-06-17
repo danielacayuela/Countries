@@ -7,11 +7,8 @@ export const LandingStyle = styled.div`
     display: flex;
     height: 100vh;
     justify-content:center;
+    align-items:center;
     margin:auto;
-
-    .general {
-        margin-top:15%;
-    };
 
     p {
         color:#011936;

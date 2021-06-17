@@ -3,6 +3,8 @@ import styled from 'styled-components'
 export const HomeStyle = styled.div`
 
     background-image: url('https://i.pinimg.com/originals/27/28/2b/27282b52cfd66b3d18d768e72bed9e07.jpg');
+    height:100vh;
+    width:100%;
     text-align: center;
     display: flex;
     flex-direction: column;
